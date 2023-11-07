@@ -1,0 +1,33 @@
+.bienestar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(26, 11, 11, 0.996);
+    padding: 20px 30px;
+}
+
+.bienestar-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.bienestar-content {
+    font-size: 30px;
+}
+.column-left {
+    flex: 2;
+    padding: 15px;
+    text-align: center;
+}
+
+.column-right {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .column-left p {
+        font-size: 60%;
+    }
+}

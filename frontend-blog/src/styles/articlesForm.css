@@ -1,0 +1,49 @@
+body {
+    background: lavenderblush;
+}
+
+.articles-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.articles-container {
+    margin-bottom: 15px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: bg-zinc-950;
+    padding: 2.5rem;
+    background: pink;
+}
+
+.input-container > button {
+    text-align: left;
+}
+
+.title-input {
+    width: 100%;
+    display: block;
+    padding: 1.5rem 4.5rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    border-radius: 1rem;
+}
+
+.content-textarea {
+    width: 100%;
+    display: block;
+    padding: 1.5rem 4.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-radius: 1rem;
+}
+
+.articles-form {
+    color: darkviolet;
+}

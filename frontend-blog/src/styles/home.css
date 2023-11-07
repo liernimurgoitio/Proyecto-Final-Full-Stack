@@ -1,0 +1,124 @@
+.hero-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-head {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(26, 11, 11, 0.996);
+    padding: 20px 30px;
+    justify-content: space-around;
+}
+
+.blink-cursor {
+    margin-left: 10px;
+    margin-right: 2px;
+    color: transparent;
+}
+
+.blink-cursor.active {
+    color: rgba(253, 96, 1, 1);
+}
+
+@keyframes shadowAnimation {
+    0% {
+        text-shadow: 10px 10px 2px rgba(253, 96, 1, 1);
+    }
+    50% {
+        text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+        text-shadow: 10px 10px 2px rgb(213, 22, 22);
+    }
+}
+
+.hero-content {
+    align-items: center;
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+    position: relative;
+    color: rgba(26, 11, 11, 0.996);
+}
+
+.hero-links {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-links img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.hero-links .link-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(26, 11, 11, 0.996);
+    display: block;
+    text-align: center;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+}
+.social-media-links a {
+    font-size: 40px;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid indigo;
+    background-color: violet;
+}
+.social-media-links a:hover {
+    color: red;
+    background-color: darkred;
+    border: 1px solid yellow;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .hero-head {
+        font-size: 25px;
+        margin-top: -20px;
+    }
+    .hero-content {
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    .hero-links {
+        gap: 60px;
+        margin-right: 40px;
+    }
+
+    .hero-links {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-links .link-name {
+        font-size: 11px;
+    }
+
+    .hero-home p {
+        margin-left: 20px;
+    }
+}

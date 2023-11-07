@@ -1,0 +1,146 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5em;
+    margin-bottom: 40px;
+    padding: 1em;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    background-color: red;
+}
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    height: 6.25em;
+    color: rgba(245, 245, 245);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    background-color: transparent;
+}
+.circle-logo {
+    width: 50px;
+    /* height: 50px; */
+    border-radius: 50%;
+    background-color: #fd6050;
+    background-image: radial-gradient(
+            rgba(253, 96, 1, 1) 9%,
+            rgba(7, 58, 255, 0) 100%
+        ),
+        linear-gradient(125deg, black 1%, #1a005e 100%);
+    margin: 0 auto;
+}
+.letter-logo {
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header ul {
+    height: 80px;
+    width: 900px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.header li {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    /* margin-left: 15px;
+  margin-right: 15px; */
+    margin: 0 0.5em;
+}
+
+.header li a {
+    color: white;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.header .active,
+.header a:hover {
+    color: purple;
+}
+
+.header .button {
+    background-color: chocolate;
+    display: none;
+    border: 0;
+    border-radius: 5px;
+    height: 3.5em;
+}
+
+.header .svg {
+    width: 3.5em;
+    height: 2.5em;
+    /* margin-right: 15px; */
+}
+
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: red; /* Agrega el color de fondo deseado */
+        height: 100%;
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: left;
+    }
+
+    .circle-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .letter-logo {
+        font-size: 20px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .header .button {
+        display: block; /*Mostrar el botón en pantallas pequeñas*/
+        height: 2.5em;
+        width: 3.5em;
+        border: none;
+    }
+
+    .button .svg {
+        display: block;
+    }
+
+    .header .nav {
+        width: 210%;
+        display: none; /* Ocultar la navegación en pantallas pequeñas */
+    }
+
+    .nav.active {
+        display: block;
+        margin-right: 100px;
+    }
+
+    .header ul {
+        flex-direction: column;
+    }
+}

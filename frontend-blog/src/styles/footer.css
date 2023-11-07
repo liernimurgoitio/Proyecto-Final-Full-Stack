@@ -1,0 +1,15 @@
+.footer {
+    min-height: 10px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 35px;
+    padding-top: 4px;
+    border-top: 3px solid black;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: rgba(245, 245, 245);
+}

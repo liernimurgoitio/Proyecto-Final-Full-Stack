@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+    background: lavenderblush;
+    color: rgba(26, 11, 11, 0.996);
+    margin-bottom: 50px;
+}
