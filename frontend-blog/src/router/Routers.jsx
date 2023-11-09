@@ -10,6 +10,7 @@ import { Bienestar } from "../components/pages/Bienestar";
 import { Inspiracion } from "../components/pages/Inspiracion";
 import { Estilovida } from "../components/pages/Estilovida";
 
+
 export const Routers = () => {
     return (
         <BrowserRouter>
@@ -21,7 +22,7 @@ export const Routers = () => {
                 <Routes>
                     <Route path="/comentarios" element={<Comentarios />} />
                     <Route path="/articles/new" element={<ArticlesForm />} />  
-                    <Route path="/" element={<Navigate to="/Home" />} />
+                    <Route path="/" element={<Navigate to="/Home" replace />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/bienestar" element={<Bienestar />} />
                     <Route path="/inspiracion" element={<Inspiracion />} />

@@ -1,20 +1,28 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
-from models.article import Article  
+from models.article import Article
 from models.publication import Publication
 
 
 # Conexion a la base de datos
 client = AsyncIOMotorClient('mongodb://localhost:27017')
 database = client['my_blog']  # Conexion a la base de datos 'my_blog'
-# Conexion a la coleccion 'articles'
-collection_articles = database['articles']
-# Conexion a la coleccion 'publications'
-collection_publications = database['publications']
-collection_users = database['users']  # Conexion a la coleccion 'users'
+collection_articles = database['articles'] # Conexion a la coleccion 'articles'
+collection_publications = database['publications'] # Conexion a la coleccion 'publications'
+collection_users = database['users'] # Conexion a la coleccion 'users'
 
-# FUNCIONES A IMPLEMENTAR 'articles'
 
+# Funciones a implementar para 'users'
+async def verify_credentials(username: str, password: str) -> bool:
+    # Buscar el usuario en la colección por su nombre de usuario
+    user = await collection_users.find_one({"username": username})
+    # Verificar si se encontró el usuario y si la contraseña coincide
+    if user and user["password"] == password:
+        return True
+
+    return False
+
+# Funciones a implementar para 'articles'
 
 async def get_one_article_id(id):  # Funcion para obtener un articulo por su id
     # Obtenemos el articulo por su id
@@ -28,7 +36,6 @@ async def get_one_article(title):
     article = await collection_articles.find_one({'title': title})
     return article  # Devolvemos el articulo
 
-
 async def get_all_articles():  # Funcion para obtener todos los articulos de la coleccion 'articles'
     articles = []  # Obtenemos todos los articulos de la coleccion 'articles'
     # Creamos un cursor para obtener los articulos de la coleccion 'articles'
@@ -37,7 +44,6 @@ async def get_all_articles():  # Funcion para obtener todos los articulos de la 
         # Agregamos el articulo al array de articles
         articles.append(Article(**document))
     return articles  # Devolvemos los articles
-
 
 async def create_article(article):  # Funcion para crear un articulo
     # Insertamos el articulo en la coleccion 'articles'
@@ -58,13 +64,13 @@ async def update_article(id: str, data):  # Funcion para actualizar un articulo
     document = await collection_articles.find_one({'_id': ObjectId(id)})
     return document  # Devolvemos el articulo actualizado
 
+
 async def edit_article(id: str, article: Article, articles_db):
     article_dict = {str(a._id): a for a in articles_db}
     if id in article_dict:
         articles_db[article_dict[id]] = article
         return article
     return {"message": "Article not found"}
-
 
 
 async def delete_article(id: str):  # Funcion para eliminar un articulo
@@ -124,3 +130,4 @@ async def delete_publication(id: str):  # Funcion para eliminar publicacion
     # Eliminamos publicacion en la coleccion 'publications' por su id
     await collection_publications.delete_one({'_id': ObjectId(id)})
     return True  # Devolvemos True para indicar que se elimino la publicacion correctamente
+

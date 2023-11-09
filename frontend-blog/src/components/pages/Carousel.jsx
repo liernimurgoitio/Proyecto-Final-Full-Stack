@@ -1,11 +1,12 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import PropTypes from "prop-types";
+import "../../styles/carousel.css"
 
-const CarruselFotos = ({ images }) => {
+const CarouselFotos = ({ images }) => {
     return (
-        <Carousel>
+        <Carousel className="carousel">
             {images &&
                 images.map((image, index) => (
                     <div key={index}>
@@ -19,8 +20,8 @@ const CarruselFotos = ({ images }) => {
     );
 };
 
-CarruselFotos.propTypes = {
+CarouselFotos.propTypes = {
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+  };
 
-export default CarruselFotos;
+export default CarouselFotos;  

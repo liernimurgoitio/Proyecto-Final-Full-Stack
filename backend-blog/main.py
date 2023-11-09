@@ -1,12 +1,9 @@
 from fastapi import FastAPI
 from routes.article import article
 from routes.publication import publication
-
-# peticiones que no sean deL mismo origen
 from fastapi.middleware.cors import CORSMiddleware
 from decouple import config  # para sacar los datos de la variable de entorno
 
-from fastapi.staticfiles import StaticFiles
 
 print(config('FRONTEND_URL'))
 
@@ -36,3 +33,4 @@ def root():
 
 app.include_router(article)
 app.include_router(publication)
+

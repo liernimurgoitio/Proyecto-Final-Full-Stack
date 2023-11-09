@@ -31,11 +31,8 @@ class Publication(BaseModel):
             'example': {
                 "id": "5f48d8f50106110016a00001",  # id is a string in the database
                 "title": "My first publication",  # title is a string in the database
-                # content is a string in the database
-                "content": "This is my first publication",
-                # created_at is a datetime object in the database
-                "created_at": "2021-01-01T10:00:00.000Z",
-                # updated_at is a datetime object in the database
-                "updated_at": "2021-01-01T10:00:00.000Z"
+                "content": "This is my first publication", # content is a string in the database
+                "created_at": "2021-01-01T10:00:00.000Z", # created_at is a datetime object in the database
+                "updated_at": "2021-01-01T10:00:00.000Z" # updated_at is a datetime object in the database
             }
         }
